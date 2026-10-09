@@ -1,0 +1,14 @@
+[project]
+name = "span-critical-path-extractor"
+version = "0.1.0"
+description = "Analyzes a completed trace span tree to identify the longest sequential chain of spans contributing to overall latency, excluding concurrent or overlapping work."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
