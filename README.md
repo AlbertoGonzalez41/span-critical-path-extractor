@@ -31,3 +31,10 @@ Clock skew is not treated as an error. A child that starts after its parent ends
 Timestamps are opaque numbers — microseconds, milliseconds, epoch seconds, anything totally ordered. The library never compares them to a wall clock, so units are the caller's concern. Keep them consistent within a single call.
 
 Ties (two children ending at the same time) are broken by `span_id` so results are deterministic across runs and platforms.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
