@@ -1,6 +1,6 @@
 [project]
 name = "span-critical-path-extractor"
-version = "0.1.2"
+version = "0.1.3"
 description = "Analyzes a completed trace span tree to identify the longest sequential chain of spans contributing to overall latency, excluding concurrent or overlapping work."
 requires-python = ">=3.10"
 dependencies = []
